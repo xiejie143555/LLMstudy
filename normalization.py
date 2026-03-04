@@ -21,6 +21,7 @@ out_norm = (out - mean) / torch.sqrt(var)
 # 再计算输出结果的平均值和方差
 mean = out_norm.mean(dim=-1, keepdim=True)
 var = out_norm.var(dim=-1, keepdim=True)
+torch.set_printoptions(sci_mode=False)
 print("Normalized layer outputs:\n", out_norm)
 print("Mean:\n", mean)
 print("Variance:\n", var)
